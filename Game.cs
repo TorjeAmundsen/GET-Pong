@@ -16,21 +16,21 @@
 
         public void UpdateBall()
         {
-            int bounces = 0;
+            int currentBounces = 0;
             if (_ball.x == 0 || _ball.x == _consoleWidth)
             {
                 _ball.HitHorizontalWall();
-                bounces++;
+                currentBounces++;
             }
             if (_ball.y == 0 || _ball.y == _consoleHeight)
             {
                 _ball.HitVerticalWall();
-                bounces++;
+                currentBounces++;
             }
             _ball.x += _ball.xVelocity;
             _ball.y += _ball.yVelocity;
-            if (bounces > 0) _bounces++;
-            if (bounces == 2) _cornerHits++;
+            if (currentBounces > 0) _bounces++;
+            if (currentBounces == 2) _cornerHits++;
         }
 
         public void DrawBall()
